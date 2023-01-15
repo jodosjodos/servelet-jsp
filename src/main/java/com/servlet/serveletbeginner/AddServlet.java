@@ -1,6 +1,7 @@
 package com.servlet.serveletbeginner;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -8,7 +9,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public class AddServelet extends HttpServlet {
+@WebServlet("/add")
+public class AddServlet extends HttpServlet {
 public  void  doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 int nbr1= Integer.parseInt( req.getParameter("num1"));
 int nbr2 = Integer.parseInt( req.getParameter("num2"));

@@ -8,7 +8,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 public class HomeServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) {
         try {

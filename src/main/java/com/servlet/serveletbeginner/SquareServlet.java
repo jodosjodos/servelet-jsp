@@ -1,11 +1,13 @@
 package com.servlet.serveletbeginner;
 
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class SquareServelet extends HttpServlet {
+@WebServlet("/sq")
+public class SquareServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) {
         PrintWriter out = null;
         try {
