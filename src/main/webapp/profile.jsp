@@ -25,10 +25,12 @@
             out.println("<hr>");
         }
 
+
         // Close resources
         rs.close();
         st.close();
         con.close();
+<%--catch possible errors--%>
     } catch (SQLException | ClassNotFoundException e) {
         out.println("An error occurred: " + e.getMessage());
         e.printStackTrace();
