@@ -6,6 +6,7 @@
 </head>
 <body>
 <%
+<%--    connect to db--%>
     String conUrl = "jdbc:postgresql://localhost:5432/servlet";
     try {
         String sql = "SELECT * FROM student";
