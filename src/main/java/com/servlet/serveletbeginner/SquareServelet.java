@@ -13,7 +13,7 @@ public class SquareServelet extends HttpServlet {
         try {
             out = res.getWriter();
 
-            Integer sum = (Integer) req.getAttribute("sum");
+            Integer sum = Integer.parseInt(req.getParameter("sum"));
             if (sum == null) {
                 out.println("please provide number ");
             }
@@ -21,7 +21,7 @@ public class SquareServelet extends HttpServlet {
             System.out.println(sqr);
             out.println(" hello to square servlet : " + sqr);
 
-        } catch (IOException e) {
+        } catch ( IOException e) {
             throw new RuntimeException(e);
         }
     }

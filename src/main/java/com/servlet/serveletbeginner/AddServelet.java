@@ -25,7 +25,7 @@ req.setAttribute("sum",sum);
  */
 
   // using redirect
-  res.sendRedirect("sq");
+  res.sendRedirect("sq?sum="+sum);
 }
 
 }
