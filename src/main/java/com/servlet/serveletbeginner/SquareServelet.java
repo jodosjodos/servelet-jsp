@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class SquareServelet extends HttpServlet {
-public  void  doPost(HttpServletRequest req, HttpServletResponse res){
+public  void  doGet(HttpServletRequest req, HttpServletResponse res){
     PrintWriter out = null;
     try {
         int sum  = (int) req.getAttribute("sum");
