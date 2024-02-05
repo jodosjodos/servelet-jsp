@@ -15,6 +15,7 @@
         ResultSet rs = st.executeQuery(sql);
         System.out.println(rs.toString());
 
+//        loop over fetched records
         if (rs.next()) {
             out.println("RollNo: " + rs.getString(1) + "<br>");
             out.println("Marks: " + rs.getString(2) + "<br>");
