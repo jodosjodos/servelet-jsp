@@ -1,6 +1,5 @@
 package com.servlet.serveletbeginner;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,8 +17,15 @@ req.setAttribute("sum",sum);
 
 //  PrintWriter out = res.getWriter();
 //  out.println("sum of 2 nbers is " +sum);
-  RequestDispatcher rd= req.getRequestDispatcher("/sq");
+
+  // using dispatch
+/*  RequestDispatcher rd= req.getRequestDispatcher("/sq");
   rd.forward(req,res);
+
+ */
+
+  // using redirect
+  res.sendRedirect("sq");
 }
 
 }
