@@ -1,10 +1,10 @@
 package com.servlet.serveletbeginner;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -30,8 +30,13 @@ req.setAttribute("sum",sum);
 
 
 //  using sessions
-  HttpSession session= req.getSession();
-  session.setAttribute("sum",sum);
+//  HttpSession session= req.getSession();
+//  session.setAttribute("sum",sum);
+//  res.sendRedirect("sq");
+
+//  using cookie
+  Cookie cookie = new Cookie("sum",sum+"");
+  res.addCookie(cookie);
   res.sendRedirect("sq");
 }
 
