@@ -26,6 +26,10 @@
     <servlet>
         <servlet-name>home</servlet-name>
         <servlet-class>com.servlet.serveletbeginner.HomeServlet</servlet-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>Jean-de-Dieu</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>home</servlet-name>
