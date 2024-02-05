@@ -4,6 +4,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -25,7 +26,13 @@ req.setAttribute("sum",sum);
  */
 
   // using redirect
-  res.sendRedirect("sq?sum="+sum);
+//  res.sendRedirect("sq?sum="+sum);
+
+
+//  using sessions
+  HttpSession session= req.getSession();
+  session.setAttribute("sum",sum);
+  res.sendRedirect("sq");
 }
 
 }
