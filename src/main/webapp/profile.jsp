@@ -9,6 +9,7 @@
 <%--    connect to db--%>
     String conUrl = "jdbc:postgresql://localhost:5432/servlet";
     try {
+<%--swl command to fetch--%>
         String sql = "SELECT * FROM student";
         Class.forName("org.postgresql.Driver");
         Connection con = DriverManager.getConnection(conUrl, "jodos", "jodos2006");
