@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 
 <html>
 <head>
@@ -29,13 +31,26 @@
 
 <%--fetch data--%>
 <%--fetch  database source using jstl--%>
-<sql:setDataSource var="db" driver="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/servlet" user="jodos" password="jodos2006"/>
-<sql:query var="rs" dataSource="${db}">
-    SELECT * FROM gadgets
-</sql:query>
-<c:forEach items="${rs.rows}" var="gadget">
-    <c:out value="${gadget.gid}"/> : <c:out value="${gadget.gname}"/> : <c:out value="${gadget.price}"/>
+<%--<sql:setDataSource var="db" driver="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/servlet" user="jodos"--%>
+<%--                   password="jodos2006"/>--%>
+<%--<sql:query var="rs" dataSource="${db}">--%>
+<%--    SELECT * FROM gadgets--%>
+<%--</sql:query>--%>
+<%--<c:forEach items="${rs.rows}" var="gadget">--%>
+<%--    <c:out value="${gadget.gid}"/> : <c:out value="${gadget.gname}"/> : <c:out value="${gadget.price}"/>--%>
 
+<%--</c:forEach>--%>
+
+<%--functions--%>
+<c:set var="str" value="Jodos is  best java developer"/>
+Length : ${fn:trim(str)}
+<c:forEach items="${fn:split(str,' ')}" var="s">
+    <br>
+    ${s}
 </c:forEach>
+<c:if test="${fn:length(str) > 5}">
+    length is greater
+</c:if>
+
 </body>
 </html>
