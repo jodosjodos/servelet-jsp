@@ -11,6 +11,13 @@
     <title>Welcome </title>
 </head>
 <body>
- you have loged in successfully
+
+<%
+    if (session.getAttribute("email") == null) {
+        response.sendRedirect("login.jsp");
+    }
+%>
+you have loged in successfully : welcome :${email}
+<a href="videos.jsp"> video here</a>
 </body>
 </html>

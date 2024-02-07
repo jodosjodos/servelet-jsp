@@ -11,6 +11,12 @@
     <title> video page</title>
 </head>
 <body>
+<%
+    if (session.getAttribute("email") == null) {
+        response.sendRedirect("login.jsp");
+    }
+%>
 
+welcome to video page and you are authorized to be here
 </body>
 </html>
