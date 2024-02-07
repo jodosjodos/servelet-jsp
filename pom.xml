@@ -56,13 +56,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-<!--        postgres-->
+        <!--        postgres-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.6.0</version>
         </dependency>
-            <dependency>
+        <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
             <version>3.0.0</version>
