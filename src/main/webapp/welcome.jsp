@@ -19,5 +19,9 @@
 %>
 you have loged in successfully : welcome :${email}
 <a href="videos.jsp"> video here</a>
+
+<form action="logout">
+    <input type="submit" value="logout">
+</form>
 </body>
 </html>
