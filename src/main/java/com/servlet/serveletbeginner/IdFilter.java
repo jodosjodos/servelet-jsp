@@ -3,8 +3,10 @@ package com.servlet.serveletbeginner;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.http.HttpServletRequest;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebFilter("/addAlien")
 public class IdFilter implements Filter {
@@ -18,8 +20,13 @@ public class IdFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-        chain.doFilter(req, res);
+    public void doFilter(ServletRequest request, ServletResponse res, FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest req = (HttpServletRequest) request;
+        PrintWriter out = res.getWriter();
+        int aid = Integer.parseInt(req.getParameter("aid"));
+        if (aid > 1) chain.doFilter(request, res);
+        else
+            out.println("invalid input");
     }
 
     @Override
