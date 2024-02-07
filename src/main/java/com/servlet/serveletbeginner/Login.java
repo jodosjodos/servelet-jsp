@@ -18,10 +18,14 @@ public class Login extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         PrintWriter out = res.getWriter();
+
+//        login object
+        LoginDao dao = new LoginDao();
+
         if (email.isEmpty() || password.isEmpty()) {
             out.println("please provide email or password");
         }
-        if (email.equals("jodos@gmail.com") && password.equals("umushi")) {
+        if (dao.check(email, password)) {
             HttpSession session = req.getSession();
             session.setAttribute("email", email);
             res.sendRedirect("welcome.jsp");
