@@ -12,11 +12,16 @@
 </head>
 <body>
 <%
+    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
     if (session.getAttribute("email") == null) {
         response.sendRedirect("login.jsp");
     }
 %>
 
 welcome to video page and you are authorized to be here
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4ZMq4-T0DaQ?si=pXZNnXvLZki_H7Uv"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
 </body>
 </html>

@@ -13,9 +13,12 @@
 <body>
 
 <%
+    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
+    response.setHeader("Expires","0");
     if (session.getAttribute("email") == null) {
         response.sendRedirect("login.jsp");
     }
+
 %>
 you have loged in successfully : welcome :${email}
 <a href="videos.jsp"> video here</a>
