@@ -12,7 +12,7 @@ public class LoginDao {
     String sql = "SELECT * FROM  login where uname=? and pass=?";
 
     public boolean check(String uname, String pass) {
-        try {
+        try {  
             Class.forName("org.postgresql.Driver");
             Connection con = DriverManager.getConnection(url, username, password);
             PreparedStatement st = con.prepareStatement(sql);
